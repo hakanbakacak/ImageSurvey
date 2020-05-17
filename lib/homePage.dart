@@ -13,7 +13,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          FlatButton(onPressed: null, child: Text("About Us"))
+          FlatButton(onPressed: (){}, child: Text("About Us",), ),
+          FlatButton(onPressed: (){}, child: Text("Survey",), )
         ],
       ),
     );
