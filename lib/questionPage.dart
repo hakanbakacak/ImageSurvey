@@ -80,7 +80,7 @@ class _ImageTimerState extends State<ImageTimer> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                "assets/logo.png",
+                "assets/odaklanmis01.PNG",
                 fit: BoxFit.cover,
                 height: 500,
               ),
@@ -89,14 +89,28 @@ class _ImageTimerState extends State<ImageTimer> {
         ),
       );
     } else {
-      return Center(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(icon: Icon(Icons.add), onPressed:(){}),
-            IconButton(icon: Icon(Icons.ac_unit), onPressed: (){})
-          ],
+      return Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(width: 800, height: 500, color: Theme.of(context).primaryColor,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  FlatButton(onPressed: (){question = true; setState(() {
+                    
+                  });}, child: Text("Evet"),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),),
+                  SizedBox(width: 300,),
+                  FlatButton(onPressed: (){question = true; setState(() {
+                    
+                  });}, child: Text("Hayır"), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),)
+                ],
+              )
+            ],
+          ),
         ),
       );
     }
