@@ -100,13 +100,17 @@ class _ImageTimerState extends State<ImageTimer> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  FlatButton(onPressed: (){question = true; setState(() {
-                    
-                  });}, child: Text("Evet"),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),),
+                  FlatButton(onPressed: (){setState(() {
+                  question = true;
+                  initState();
+                  });}, 
+                  child: Text("Evet"),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),),
                   SizedBox(width: 300,),
-                  FlatButton(onPressed: (){question = true; setState(() {
-                    
-                  });}, child: Text("Hayır"), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),)
+                  FlatButton(onPressed: (){ setState(() {
+                  question = true;
+                  initState();
+                  });}, 
+                  child: Text("Hayır"), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),)
                 ],
               )
             ],
