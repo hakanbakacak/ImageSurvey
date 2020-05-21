@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'homePage.dart';
-
+int imageCount=20;
 class QuestionPage extends StatefulWidget {
   static const String route = '/survey';
   @override
@@ -10,6 +10,7 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,15 +56,16 @@ class ImageTimer extends StatefulWidget {
 }
 
 class _ImageTimerState extends State<ImageTimer> {
-  bool question = true;
+  bool imageShowState = true;
+  int questionNumber=1;
   @override
   void initState() {
     Timer timer = new Timer(new Duration(seconds: 5), () {
       setState(() {
-        if (question == true) {
-          question = false;
+        if (imageShowState == true) {
+          imageShowState = false;
         } else {
-          question = true;
+          imageShowState = true;
         }
       });
       debugPrint("Print after 5 seconds");
@@ -72,7 +74,7 @@ class _ImageTimerState extends State<ImageTimer> {
 
   @override
   Widget build(BuildContext context) {
-    if (question == true) {
+    if (imageShowState == true) {
       return Container(
         child: Center(
           child: Column(
@@ -80,9 +82,9 @@ class _ImageTimerState extends State<ImageTimer> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                "assets/odaklanmis01.PNG",
+                "/odaklanmis/Slayt$questionNumber.JPG",
                 fit: BoxFit.cover,
-                height: 500,
+                height: 450,
               ),
             ],
           ),
@@ -90,24 +92,25 @@ class _ImageTimerState extends State<ImageTimer> {
       );
     } else {
       return Container(
-        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(width: 800, height: 500, color: Theme.of(context).primaryColor,),
+              Container(width: 800, height: 450, color: Theme.of(context).primaryColor,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   FlatButton(onPressed: (){setState(() {
-                  question = true;
+                  imageShowState = true;
+                  questionNumber++;
                   initState();
                   });}, 
                   child: Text("Evet"),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),),
                   SizedBox(width: 300,),
                   FlatButton(onPressed: (){ setState(() {
-                  question = true;
+                  questionNumber++;
+                  imageShowState = true;
                   initState();
                   });}, 
                   child: Text("Hayır"), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0), side: BorderSide(color: Theme.of(context).primaryColor)),)
@@ -115,7 +118,6 @@ class _ImageTimerState extends State<ImageTimer> {
               )
             ],
           ),
-        ),
       );
     }
   }
