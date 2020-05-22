@@ -90,7 +90,17 @@ class _ImageTimerState extends State<ImageTimer> {
           ),
         ),
       );
-    } else {
+    }
+    else if(questionNumber>=imageCount+1){
+      return  Center(
+        child: Container(
+          width: 800,
+          height: 450,
+          child: Text("Teşekkürler")
+        ),
+      );
+    } 
+    else {
       return Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
