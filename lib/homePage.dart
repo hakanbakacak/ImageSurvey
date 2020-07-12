@@ -1,5 +1,6 @@
 import 'package:bildam_survey/questionPage.dart';
 import 'package:flutter/material.dart';
+import 'survey_page.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -20,7 +21,10 @@ class _HomePageState extends State<HomePage> {
           }, child: Text("About Us",), ),
           FlatButton(onPressed: (){
              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => QuestionPage()));
-          }, child: Text("Survey",), )
+          }, child: Text("Survey",), ),
+          FlatButton(onPressed: (){
+             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SurveyPage()));
+          }, child: Text("SurveyPage",), )
         ],
       ),
     );

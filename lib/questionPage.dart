@@ -59,6 +59,7 @@ class ImageTimer extends StatefulWidget {
 class _ImageTimerState extends State<ImageTimer> {
   bool imageShowState = true;
   int questionNumber=1;
+ 
   @override
   void initState() {
     Timer timer = new Timer(new Duration(seconds: 5), () {
@@ -77,18 +78,23 @@ class _ImageTimerState extends State<ImageTimer> {
   Widget build(BuildContext context) {
     if (imageShowState == true) {
       return Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                "/odaklanmis/Slayt$questionNumber.JPG",
-                fit: BoxFit.cover,
-                height: 450,
+        child: Column(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "/odaklanmis/Slayt$questionNumber.JPG",
+                    fit: BoxFit.cover,
+                    height: 450,
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+            Text("time")
+          ],
         ),
       );
     }
@@ -136,3 +142,4 @@ class _ImageTimerState extends State<ImageTimer> {
     }
   }
 }
+
