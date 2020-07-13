@@ -52,7 +52,7 @@ class _SurveyPageState extends State<SurveyPage> {
               decoration: BoxDecoration(
                 borderRadius:BorderRadius.circular(16),
                 border: Border.all(color: Colors.white),
-                 color: Colors.teal,
+                 color: Colors.cyan[100],
                  ),
               width: size.width*0.4,
               height: size.height*0.4,

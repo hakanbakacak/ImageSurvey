@@ -19,7 +19,7 @@ class SurveyApp extends StatelessWidget {
       },
       title: 'SURVEY',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.teal[300],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
     );
