@@ -1,6 +1,6 @@
 # bildam_survey
 
-A new Flutter project.
+This application is a web application developed with Flutter that allows the user to record her answers after showing the photos for a while.
 
 ## Getting Started
 
